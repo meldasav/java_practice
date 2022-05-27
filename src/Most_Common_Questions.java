@@ -1,10 +1,9 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Most_Common_Questions {
     public static void main(String[] args) {
+        System.out.println(findSecondMax(new ArrayList<>(Arrays.asList(1,3,4,5,6))));
+        System.out.println(minNumber(10, 8, 8));
         System.out.println(replaceFirstLastChar("java is fun"));
         /**
          * Ask user enter a number.If number less than 10 stop the program
@@ -88,12 +87,37 @@ public class Most_Common_Questions {
         str = str.trim();
         if (str.length() < 2) return "";
         else {
-        return str.charAt(str.length() - 1) + str.substring(1, str.length() - 1) + str.charAt(0);
+            return str.charAt(str.length() - 1) + str.substring(1, str.length() - 1) + str.charAt(0);
         }
-
-
-
-
     }
 
+    public static int minNumber(int a, int b, int c) {
+        if (a == b || b == c) return b;
+        else if (a == c) return c;
+
+        int min = Math.min(a, Math.min(b, c));
+        int max = Math.max(a, Math.max(b, c));
+
+        if (a != max && a != min) return a;
+        else if (b != max && b != min) return b;
+        else return c;
+    }
+
+    public static int findMinNumber(ArrayList<Integer> numbers) {
+        TreeSet<Integer> set = new TreeSet<>(numbers);
+        return set.first();
+    }
+
+    public static int findSecondMax(ArrayList<Integer> numbers) {
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        for (int number : numbers) {
+            if (number > max) max = number;
+        }
+        for (int number : numbers) {
+            if (number > secondMax && number != max) secondMax = number;
+        }
+        return secondMax;
+    }
 }
