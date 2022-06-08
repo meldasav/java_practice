@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 
@@ -30,7 +31,7 @@ public class Homework21 {
         System.out.println(countSequenceOfCharacters("abc"));
         System.out.println(countSequenceOfCharacters("abbcca"));
         System.out.println(countSequenceOfCharacters("aaAAa"));
-        
+
 
     }
 
@@ -73,15 +74,17 @@ public class Homework21 {
     }
 
     public static String countSequenceOfCharacters(String str) {
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i+1; j <str.length() ; j++) {
-                if(i==j)count++;
-
-            }
-
+        HashSet<String> set =new HashSet<>(Arrays.asList(str));
+        String str1=Arrays.toString(set.toArray());
+        int count=0;
+        String result="";
+        for (char c : str1.toCharArray()){
+            if(c==str1.charAt(0))count++;
+            result+= c + (count+"");
         }
-        return count + "";
-    }
+           return result;
+        }
+
+
 
 }
