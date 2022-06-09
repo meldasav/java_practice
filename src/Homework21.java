@@ -62,6 +62,7 @@ public class Homework21 {
         return sum;
     }
 
+
     public static int findBiggestNumber(String str) {
         int max = Integer.MIN_VALUE;
         for (String string : str.replaceAll("[^0-9]", " ").split(" ")) {
@@ -74,17 +75,34 @@ public class Homework21 {
     }
 
     public static String countSequenceOfCharacters(String str) {
-        HashSet<String> set =new HashSet<>(Arrays.asList(str));
-        String str1=Arrays.toString(set.toArray());
-        int count=0;
-        String result="";
-        for (char c : str1.toCharArray()){
-            if(c==str1.charAt(0))count++;
-            result+= c + (count+"");
+        StringBuilder str1 = new StringBuilder();
+        for (char c : noDup(str.toCharArray())) {
+            str1.append(c).append(countDup(str, c));
         }
-           return result;
+        return str1.toString();
+    }
+
+    public static int countDup(String str, char c) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (c == str.charAt(i)) count++;
         }
+        return count;
+    }
 
-
+    public static char[] noDup(char[] array) {
+        StringBuilder arr = new StringBuilder();
+        for (char c : array) {
+            if (arr.toString().indexOf(c) < 0) {
+                arr.append(c);
+            }
+        }
+        return arr.toString().toCharArray();
+    }
 
 }
+
+
+
+
+
