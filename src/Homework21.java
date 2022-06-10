@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 
 public class Homework21 {
@@ -35,6 +32,7 @@ public class Homework21 {
 
     }
 
+    // TASK1
     public static void fizzBuzz1(int number) {
         for (int i = 1; i <= number; i++) {
             if (i % 15 == 0) System.out.println("FizzBuzz");
@@ -45,6 +43,7 @@ public class Homework21 {
         }
     }
 
+    //TASK2
     public static String fizzBuzz2(int number) {
         for (int i = 0; i <= number; i++) {
             if (number % 15 == 0) return "FizzBuzz";
@@ -54,6 +53,7 @@ public class Homework21 {
         return number + "";
     }
 
+    //TASK3
     public static int findSumNumbers(String str) {
         int sum = 0;
         for (String string : str.replaceAll("[^0-9]", " ").split(" ")) {
@@ -62,7 +62,7 @@ public class Homework21 {
         return sum;
     }
 
-
+    //TASK4
     public static int findBiggestNumber(String str) {
         int max = Integer.MIN_VALUE;
         for (String string : str.replaceAll("[^0-9]", " ").split(" ")) {
@@ -74,6 +74,7 @@ public class Homework21 {
         return 0;
     }
 
+    //TASK5
     public static String countSequenceOfCharacters(String str) {
         StringBuilder str1 = new StringBuilder();
         for (char c : noDup(str.toCharArray())) {
