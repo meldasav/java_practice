@@ -22,7 +22,7 @@ public class Global_TechnologyQuestions {
     //TODO Create a method to find a Fibonacci number
 
     public static void fibonacciNumber(int number) {
-        int num1 = 0, num2 = 1, num3 = 0;
+        int num1 = 0, num2 = 1, num3 ;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i <= number; i++) {
             sb.append(num1).append("-");

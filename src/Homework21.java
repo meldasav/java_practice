@@ -75,7 +75,7 @@ public class Homework21 {
     }
 
     //TASK5
-    public static String countSequenceOfCharacters(String str) {
+    public static String countSequenceOfCharacters1(String str) {
         StringBuilder str1 = new StringBuilder();
         for (char c : noDup(str.toCharArray())) {
             str1.append(c).append(countDup(str, c));
@@ -99,6 +99,21 @@ public class Homework21 {
             }
         }
         return arr.toString().toCharArray();
+    }
+    public static String countSequenceOfCharacters(String string){
+        StringBuilder result = new StringBuilder();
+        int count = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (i < string.length()-1 && string.charAt(i) == string.charAt(i+1)){
+                count ++;
+            }
+            else {
+                count ++;
+                result.append(count).append(string.charAt(i));
+                count = 0;
+            }
+        }
+        return result.toString();
     }
 
 }
