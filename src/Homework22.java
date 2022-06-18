@@ -25,6 +25,7 @@ public class Homework22 {
         System.out.println(firstDuplicate(new int[]{1}));
         System.out.println(firstDuplicate(new int[]{}));
 
+
     }
 
     //TASK 1
@@ -98,14 +99,16 @@ public class Homework22 {
     public static int firstDuplicate(int[] array) {
         if (array.length <= 1) return -1;
         else {
-            int[] arr = new int[array.length];
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] == array[i + 1]) {
-                    arr[i] = array[i];
+            ArrayList<Integer> list = new ArrayList<>();
+            for (int num : array) list.add(num);
+            ArrayList<Integer> newListWithDuplicate = new ArrayList<>();
+            for (int i = 0; i < list.size(); i++) {
+                for (int j = i + 1; j < list.size(); j++) {
+                    if (list.get(i) == list.get(j)) newListWithDuplicate.add(list.get(i));
                 }
-                Arrays.sort(arr);
+                Collections.sort(newListWithDuplicate);
             }
-            return arr[arr.length - 1];
+            return newListWithDuplicate.get(newListWithDuplicate.size() - 1);
         }
     }
 }
