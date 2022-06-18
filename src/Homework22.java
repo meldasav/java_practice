@@ -111,4 +111,5 @@ public class Homework22 {
             return newListWithDuplicate.get(newListWithDuplicate.size() - 1);
         }
     }
+    
 }
