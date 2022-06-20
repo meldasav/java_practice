@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class ArrayQuestions {
     public static void main(String[] args) {
@@ -15,6 +16,8 @@ public class ArrayQuestions {
         System.out.println(Arrays.toString(shiftZeroToRight(new int[]{1, 0, 2, 0, 3, 0, 0})));
         System.out.println(Arrays.toString(shiftArrayToLeft(new int[]{1, 2, 3, 4, 5})));
         System.out.println(Arrays.toString(rightRotateArrayBy3(new int[]{1, 2, 3, 4, 5})));
+        rightShift(new int[]{1, 2, 3, 4, 5}, 3);
+        leftShift(new int[]{1, 2, 3, 4, 5}, 3);
     }
 
     public static void countCharacter(String sentence) {
@@ -85,12 +88,31 @@ public class ArrayQuestions {
     public static int[] rightRotateArrayBy3(int[] array) {
         int n = 3;
         for (int j = 1; j <= n; j++) {
-            int last = array[array.length-1];
+            int last = array[array.length - 1];
             for (int i = array.length - 1; i > 0; i--) {
                 array[i] = array[i - 1];
             }
             array[0] = last;
         }
         return array;
+    }
+    //https://www.youtube.com/watch?v=Mi-Q585zUZY
+
+    public static void rightShift(int[] arr, int rightShift) {
+        int[] temp = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            int newPosition = (i + rightShift) % arr.length;
+            temp[newPosition] = arr[i];
+        }
+        System.out.println(Arrays.toString(temp));
+    }
+
+    public static void leftShift(int[] arr, int leftShift) {
+        int[] temp = new int[arr.length];
+        for (int i = arr.length - 1; i > 0; i--) {
+            int newPosition = (i + (arr.length - leftShift)) % arr.length;
+            temp[newPosition]=arr[i];
+        }
+        System.out.println(Arrays.toString(temp));
     }
 }
