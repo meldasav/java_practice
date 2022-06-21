@@ -33,7 +33,7 @@ public class Homework22 {
         int[] array = new int[n];
         int num1 = 0, num2 = 1, num3;
         for (int i = 0; i < array.length; i++) {
-            array[i] += num1;
+            array[i] = num1;
             num3 = num1 + num2;
             num1 = num2;
             num2 = num3;
@@ -41,17 +41,46 @@ public class Homework22 {
         return array;
     }
 
+    // TASK1 SALIH SOLUTION
+    public static int[] fibonacciSeries(int n) {
+        /*
+          int[] fib;
+            if (n >= 0)fib = new int[n];
+            else fib = new int[0];
+         */
+        int[] fib = new int[n];
+        if (n > 0) fib[0] = 0;
+        if (n > 1) fib[1] = 1;
+
+//        fib[2] = fib[1] + fib[0];
+//        fib[3] = fib[2] + fib[1];
+//        fib[4] = fib[3] + fib[2];
+        // n = 4 ==> [0, 1, 1, 2]
+        for (int i = 0; i < n - 2; i++) {
+            // n = 4
+            // i = 0 => 3rd number is found
+            // i = 1 => 4th number is found
+            fib[i + 2] = fib[i + 1] + fib[i];
+        }
+        return fib;
+    }
+
     //TASK 2
     public static int fibonacciSeries2(int n) {
         int[] array = new int[n];
         int num1 = 0, num2 = 1, num3;
         for (int i = 0; i < array.length; i++) {
-            array[i] += num1;
+            array[i] = num1;
             num3 = num1 + num2;
             num1 = num2;
             num2 = num3;
         }
         return array[array.length - 1];
+    }
+
+    //TASK2 SALIH SOLUTION
+    public static int fibonacciSeries3(int n) {
+        return fibonacciSeries1(n)[n - 1];
     }
     //TASK 3
 
@@ -89,10 +118,11 @@ public class Homework22 {
     //TASK 4
     public static boolean isPowerOf_3(int number) {
         if (number < 1) return false;
-        while (number % 3 == 0) {
-            number /= 3;
+        double number1 = number;
+        while (number1 % 3 == 0) {
+            number1 /= 3;
         }
-        return number == 1;
+        return number1 == 1.0;
     }
 
     //TASK 5
@@ -102,7 +132,7 @@ public class Homework22 {
             ArrayList<Integer> list = new ArrayList<>();
             for (int num : array) list.add(num);
             ArrayList<Integer> newListWithDuplicate = new ArrayList<>();
-            for (int i = 0; i < list.size(); i++) {//1, 2, 3, 3, 4, 1
+            for (int i = 0; i < list.size(); i++) {
                 for (int j = i + 1; j < list.size(); j++) {
                     if (list.get(i) == list.get(j)) newListWithDuplicate.add(list.get(i));
                 }
@@ -111,5 +141,5 @@ public class Homework22 {
             return newListWithDuplicate.get(newListWithDuplicate.size() - 1);
         }
     }
-    
+
 }
