@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class _05HashMap {
     public static void main(String[] args) {
@@ -15,6 +16,14 @@ public class _05HashMap {
         System.out.println(compMap);
         System.out.println(compMap(compMap));
         System.out.println(compMap1(compMap));
+
+        Map<String, String> map = new HashMap<>();
+        map.put("Melda", "Sav");
+        map.put("Kerem", "Gulsever");
+        for (String str : map.keySet()) {
+        //    System.out.println(str);
+            System.out.println(map.get(str));
+        }
 
     }
 
