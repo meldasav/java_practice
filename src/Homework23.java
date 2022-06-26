@@ -21,7 +21,7 @@ public class Homework23 {
         map2.put("Apple", 4);
         map2.put("Mango", 8);
         map2.put("Orange", 3);
-        System.out.println(calculateTotalPrice2(map2));
+        System.out.println(calculateTotalPrice3(map2));
     }
 
     //TASK 1
@@ -81,5 +81,24 @@ public class Homework23 {
 
     }
 
-}
+    //TASK3
+    public static double calculateTotalPrice3(Map<String, Integer> gross) {
+        double totalPrice = 0;
+        Map<String, String> prices = new HashMap<>();
+        prices.put("Apple", "$2.00");
+        prices.put("Orange", "$3.29");
+        prices.put("Mango", "$4.99");
+        prices.put("Pineapple", "$5.25");
+        for (String product : gross.keySet()) {
+            for (int i = 0; i < gross.get(product); i++) {
+                if (product.equals("Apple") && i % 2 != 0)
+                    totalPrice += Double.parseDouble(prices.get(product).substring(1)) * 0.50;
+                else if (product.equals("Mango") && i % 4 == 3) continue;
+                else totalPrice += Double.parseDouble(prices.get(product).substring(1));
+            }
+        }
+        return (double) Math.round(totalPrice * 100) / 100;
 
+    }
+
+}
