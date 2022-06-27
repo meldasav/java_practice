@@ -5,6 +5,8 @@ import java.util.List;
 
 public class GenericsExample {
     public static void main(String[] args) {
+        //TODO https://www.youtube.com/watch?v=h7piyWnQbZA
+        //TODO https://www.youtube.com/watch?v=K1iu1kXkVoA&t=3s
         //  TODO generics does not work with primitive types needs tobe Object
         Printer<Cat> printer = new Printer<>(new Cat());
         printer.print();
