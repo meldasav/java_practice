@@ -46,5 +46,24 @@ public class _01ArrayPractice {
         System.out.println(Arrays.toString(num1));
         System.out.println(Arrays.toString(num2));
 
+        System.out.println("most counted word");
+
+        String[] collections={"Array","Arraylist","LinkList","Array","Array"};
+
+        String mostRepeatingElement="";
+        int mostCountedTimes=0;
+
+        for (int i = 0; i < collections.length; i++) {
+            String word=collections[i];
+            int countOfTheWord=0;
+            for(String w : collections){
+                if(word.equals(w))countOfTheWord++;
+            }
+            if(countOfTheWord>mostCountedTimes){
+                mostRepeatingElement=word;
+                mostCountedTimes=countOfTheWord;
+            }
+        }
+        System.out.println(mostRepeatingElement + " counted " + mostCountedTimes +" times in the collection");
     }
 }

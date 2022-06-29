@@ -1,6 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Homework23 {
     public static void main(String[] args) {
@@ -22,6 +20,7 @@ public class Homework23 {
         map2.put("Mango", 8);
         map2.put("Orange", 3);
         System.out.println(calculateTotalPrice3(map2));
+        
     }
 
     //TASK 1
@@ -88,7 +87,6 @@ public class Homework23 {
         prices.put("Apple", "$2.00");
         prices.put("Orange", "$3.29");
         prices.put("Mango", "$4.99");
-        prices.put("Pineapple", "$5.25");
         for (String product : gross.keySet()) {
             for (int i = 0; i < gross.get(product); i++) {
                 if (product.equals("Apple") && i % 2 != 0)
@@ -101,4 +99,18 @@ public class Homework23 {
 
     }
 
+    //TODO /*
+    //2 solutions - 5th of July
+    //Create a method which will return the max of any consecutive k numbers from an array
+    //arr = {4, 2, 5, 12, 20, 5, 23}, k = 3 ==> 48
+    //arr = {100, 200, 600, 300}, k = 2     ==> 900
+    //arr = {1, 2, 3}, k = 4                ==> -1
+    // */
+    public static int maxNumber(int[] array, int number) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+
+        }
+        return max;
+    }
 }
