@@ -18,6 +18,7 @@ public class _05HashMap {
         System.out.println(compMap1(compMap));
 
         Map<String, String> map = new HashMap<>();
+
         map.put("Melda", "Sav");
         map.put("Kerem", "Gulsever");
         for (String str : map.keySet()) {

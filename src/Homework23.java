@@ -20,7 +20,9 @@ public class Homework23 {
         map2.put("Mango", 8);
         map2.put("Orange", 3);
         System.out.println(calculateTotalPrice3(map2));
-        
+        System.out.println(maxNumber(new int[] {4, 2, 5, 12, 20, 5, 23},3));
+        System.out.println(maxNumber(new int[]{100, 200, 600, 300},2));
+
     }
 
     //TASK 1
@@ -59,8 +61,10 @@ public class Homework23 {
             totalPrice += map.get(s) * map1.get(s);
         }
         return totalPrice;
-    }
 
+
+
+    }
     //TASK3
     public static double calculateTotalPrice2(Map<String, Integer> map) {
         Map<String, Double> totalShopping = new HashMap<>();
@@ -107,10 +111,19 @@ public class Homework23 {
     //arr = {1, 2, 3}, k = 4                ==> -1
     // */
     public static int maxNumber(int[] array, int number) {
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < array.length; i++) {
-
+        if(number>array.length)return -1;//if giving number more than array size return -1
+        int sum =0;//first find the sum in giving size --> 4, 2, 5, 12, 20, 5, 23     number=3
+                                                       // 4 + 2 + 5=11  next 2+5+12=19 next 5 +12 +20=37 goes on
+        for (int i = 0; i <number; i++) {
+            sum+=array[i];
         }
-        return max;
-    }
+         int maxSum=sum;
+         int start=0;
+         for (int j = number; j < array.length; j++) { // 4, 2, 5, 12, 20, 5, 23
+             sum+=array[j]-array[start++];             //each time take off your start point
+            if (maxSum<sum)maxSum=sum;
+
+      }
+        return maxSum;
+   }
 }
