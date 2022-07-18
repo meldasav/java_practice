@@ -9,6 +9,10 @@ public class _01HashSet {
         //hashset does not have much method
 
 
+        HashSet<Integer> set1=new HashSet<>(Arrays.asList(1,1,2,3,4,5));
+        ArrayList<Integer> list1=new ArrayList<>(set1);
+        System.out.println(list1);
+
 
     }
 }
