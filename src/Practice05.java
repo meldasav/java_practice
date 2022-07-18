@@ -38,15 +38,19 @@ public class Practice05 {
         int point = 0;
         if (num1 <= 10) {
             point += num1 * 5;
-        }  if (num2 <= 10) {
+        }
+        if (num2 <= 10) {
             point += num2 * 4;
-        }  if (num3 <= 10) {
+        }
+        if (num3 <= 10) {
             point += num3 * 3;
-        }  if (num4 <= 10) {
+        }
+        if (num4 <= 10) {
             point += num4 * 2;
-        }  if (num5 <= 10) {
+        }
+        if (num5 <= 10) {
             point += num5;
-        }else{
+        } else {
             System.out.println("your number is not in the range");
         }
         System.out.println(point);
@@ -64,18 +68,33 @@ public class Practice05 {
          * 	If name does not start with A or a, print “Sorry, you are not in the club”
          */
         System.out.println("Please enter your name");
-        String name=scan.next();
-        if(!name.isEmpty()) System.out.println(name.length());
-        if(name.length()>0) {
+        String name = scan.next();
+        if (!name.isEmpty()) System.out.println(name.length());
+        if (name.length() > 0) {
             System.out.println(name.charAt(0));
-            System.out.println(name.charAt(name.length()-1));
+            System.out.println(name.charAt(name.length() - 1));
         }
-        if(name.length()>=3){
-            System.out.println(name.substring(0,2));
-            System.out.println(name.substring(name.length()-3));
+        if (name.length() >= 3) {
+            System.out.println(name.substring(0, 2));
+            System.out.println(name.substring(name.length() - 3));
         }
-        if(name.toUpperCase().startsWith("A")) System.out.println("You are in the club");
+        if (name.toUpperCase().startsWith("A")) System.out.println("You are in the club");
         else System.out.println("Sorry, you are not in the club");
-    }
 
+        System.out.println("please enter your address");
+        String address = scan.nextLine();
+        scan.nextLine();
+
+        if (!address.isEmpty()) {
+            if (address.toLowerCase().contains("chicago")) {
+                System.out.println("You are in the club");
+            } else if (address.toUpperCase().contains("DES PLAINES")) {
+                System.out.println("You are welcome to join the club");
+            }
+        } else {
+            System.out.println("Sorry, you will never be in the club");
+        }
+    }
 }
+
+
