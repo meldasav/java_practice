@@ -8,7 +8,7 @@ public class Practice08 {
 
         String[] cartoons = {"Garfield", "Tom", "Sylvester", "Azrael"};
         Arrays.sort(cartoons);
-        System.out.println(Arrays.binarySearch(cartoons, "Garfield") > 0 || Arrays.binarySearch(cartoons, "Felix") > 0);
+        System.out.println(Arrays.binarySearch(cartoons, "Garfield") >= 0 || Arrays.binarySearch(cartoons, "Felix") >= 0);
 
         char[] characters = {'A', 'b', 'G', 'H', '7', '5', '&', '*', 'e', '@', '4'};
         int letters = 0;
