@@ -106,7 +106,7 @@ public class Practice09 {
 
         }
         System.out.println("______________________________");
-        int[] numbersSS = { -4, -7, 0, 5, 10, 45};
+        int[] numbersSS = {-4, -7, 0, 5, 10, 45};
         List<Integer> duplicateNumbers = new ArrayList<>();
         for (int i = 0; i < numbersSS.length; i++) {
             for (int j = i + 1; j < numbersSS.length; j++) {
@@ -115,13 +115,35 @@ public class Practice09 {
                 }
             }
         }
-            if (duplicateNumbers.size() == 0) System.out.println("There is no Dup");
-            else {
-                for (Integer duplicateNumber : duplicateNumbers) {
-                    System.out.println(duplicateNumber);
+        if (duplicateNumbers.size() == 0) System.out.println("There is no Dup");
+        else {
+            for (Integer duplicateNumber : duplicateNumbers) {
+                System.out.println(duplicateNumber);
+            }
+        }
+        System.out.println("_____________________________");
+        String[] wordsS = {"A", "foo", "12", "Foo", "bar", "a", "a", "java"};
+        List<String> lisT = new ArrayList<>();
+        for (int i = 0; i < wordsS.length; i++) {
+            for (int j = i + 1; j < wordsS.length; j++) {
+                if (!lisT.contains(wordsS[i]) && wordsS[i].equalsIgnoreCase(wordsS[j])) {
+                    lisT.add(wordsS[i]);
                 }
             }
-
+        }
+        if (lisT.size() == 0) System.out.println("There is no duplicates");
+        else {
+            for (int i = 0; i < lisT.size(); i++) {
+                for (int j = i + 1; j < lisT.size(); j++) {
+                    if (!lisT.get(i).equalsIgnoreCase(lisT.get(j))) {
+                        System.out.println(lisT.get(i));
+                    }
+                }
+            }
+        }
     }
 }
+
+
+
 
