@@ -141,9 +141,29 @@ public class Practice09 {
                 }
             }
         }
+        System.out.println("__________________________________");
+        String[] words1 = {"abc", "foo", "bar"};
+        List<String> list2 = new ArrayList<>();
+        for (int i = words1.length - 1; i >= 0; i--) {
+            list2.add(words1[i]);
+        }
+        String[] array = new String[list2.size()];
+        for (int i = 0; i < list2.size(); i++) {
+            array[i] = list2.get(i);
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println("____________________________");
+        String str1 = "Java is fun";
+        StringBuilder reversed1 = new StringBuilder();
+        for (String s1 : str1.split(" ")) {
+            for (int i = s1.length() - 1; i >= 0; i--) {
+                reversed1.append(s1.charAt(i));
+            }
+            reversed1.append(" ");
+        }
+        System.out.println(reversed1.substring(0, reversed1.length() - 1));
     }
 }
-
 
 
 
