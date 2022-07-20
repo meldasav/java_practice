@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Practice09 {
     public static void main(String[] args) {
@@ -64,19 +66,61 @@ public class Practice09 {
         System.out.println("-----------------------------------");
         String str = "baNana";
         str = str.toLowerCase();
-        boolean hasDuplicate=false;
+        boolean hasDuplicate = false;
         char[] c = str.toCharArray();
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             for (int j = i + 1; j < str.length(); j++) {
-                if (!s.toString().contains(c[i] + "") && (c[i] + "").equalsIgnoreCase(c[j] + "")){
+                if (!s.toString().contains(c[i] + "") && (c[i] + "").equalsIgnoreCase(c[j] + "")) {
                     s.append(c[i]);
                     System.out.println(c[i]);
-                    hasDuplicate=true;
+                    hasDuplicate = true;
                 }
             }
         }
-        if(!hasDuplicate) System.out.println("There is no duplicated");
+        if (!hasDuplicate) System.out.println("There is no duplicated");
+        System.out.println("-------------------------------");
+        int[] numbersS = {1, 5, -4, -4, 0, -7, 0, 5, 10, 45, 45};
+        boolean firstDuplicate = false;
+        for (int i = 0; i < numbersS.length; i++) {
+            for (int j = i + 1; j < numbersS.length; j++) {
+                if (numbersS[i] == numbersS[j] && !firstDuplicate) {
+                    System.out.println(numbersS[i]);
+                    firstDuplicate = true;
+                    break;
+                }
+            }
+        }
+        System.out.println("_______________________________");
+        String[] words = {"Z", "abc", "z", "123", "#"};
+        boolean firstDup = false;
+        for (int i = 0; i < words.length; i++) {
+            for (int j = i + 1; j < words.length; j++) {
+                if (!firstDup && words[i].equalsIgnoreCase(words[j])) {
+                    System.out.println(words[i]);
+                    firstDup = true;
+                    break;
+                }
+            }
+            if (!firstDup) System.out.println("There is no dup");
+
+        }
+        System.out.println("______________________________");
+        int[] numbersSS = { -4, -7, 0, 5, 10, 45};
+        List<Integer> duplicateNumbers = new ArrayList<>();
+        for (int i = 0; i < numbersSS.length; i++) {
+            for (int j = i + 1; j < numbersSS.length; j++) {
+                if (!duplicateNumbers.contains(numbersSS[i]) && numbersSS[i] == numbersSS[j]) {
+                    duplicateNumbers.add(numbersSS[i]);
+                }
+            }
+        }
+            if (duplicateNumbers.size() == 0) System.out.println("There is no Dup");
+            else {
+                for (Integer duplicateNumber : duplicateNumbers) {
+                    System.out.println(duplicateNumber);
+                }
+            }
 
     }
 }
