@@ -23,6 +23,7 @@ public class Homework23 {
         System.out.println(maxSum(new int[]{4, 2, 5, 12, 20, 5, 23}, 3));
         System.out.println(maxSum(new int[]{100, 200, 600, 300}, 2));
 
+
     }
 
     //TASK 1
