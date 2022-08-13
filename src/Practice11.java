@@ -19,7 +19,9 @@ public class Practice11 {
         System.out.println(reverseEach("java is fun"));
         System.out.println(secondMax1(new int[]{1, 2, 7, 9}));
         System.out.println(countCharacter("Sweet banana"));
-       ;
+        System.out.println(Arrays.toString(reverseArray(new String[]{"melda","tarik","kerem"})));
+        System.out.println(mode(new int[]{1,1,2,2,2,6,4,3}));
+
     }
 
     public static int greatestNumber1(int num1, int num2, int num3) {
@@ -269,5 +271,29 @@ public class Practice11 {
             }
         }
         return map;
+
+    }
+    public static String[] reverseArray(String[] array){
+        String[] array1=new String[array.length];
+        for (int i = array.length-1; i >=0 ; i--) {
+            array1[i]=array[i];
+        }
+        return array1;
+    }
+    public static int mode(int[] array) {
+        int mode = array[0];
+        int maxCount = 0;
+        for (int i = 0; i < array.length; i++) {
+            int value = array[i];
+            int count = 1;
+            for (int j = 0; j < array.length; j++) {
+                if (array[j] == value) count++;
+                if (count > maxCount) {
+                    mode = value;
+                    maxCount = count;
+                }
+            }
+        }
+        return mode;
     }
 }
