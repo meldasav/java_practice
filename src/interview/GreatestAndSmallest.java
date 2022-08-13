@@ -1,11 +1,10 @@
 package interview;
 
-import java.util.HashSet;
 import java.util.TreeSet;
 
 public class GreatestAndSmallest {
     public static void main(String[] args) {
-        findGreatestAndSmallest(new int[]{10, 7, 7, 10, -3, 10, -3});
+        findGreatestAndSmallest1(new int[]{10, 7, 7, 10, -3, 10, -3});
     }
 
 
@@ -16,6 +15,18 @@ public class GreatestAndSmallest {
         System.out.println("Smallest number = " + set.first());
     }
 
+    public static void findGreatestAndSmallest1(int[] array) {
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (int i : array) {
+            if (i > max) max = i;
+        }
+        for (int i : array) {
+            if (i < min) min = i;
+        }
+        System.out.println("Greatest Number is " + max);
+        System.out.println("Smallest Number is " + min);
+    }
 
 }
 
