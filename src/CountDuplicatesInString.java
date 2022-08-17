@@ -3,7 +3,8 @@ import java.util.HashMap;
 public class CountDuplicatesInString {
     public static void main(String[] args) {
         countDuplicates("i am am learning java java");
-        countDuplicateCharacter(("jajaja"));
+        countDuplicateCharacter1("melda");
+
     }
 
     //TODO (the word java appeared 2 times)
@@ -23,7 +24,7 @@ public class CountDuplicatesInString {
     //TODO The character a appeared 3 times
     //TODO The character j appeared 3 times
 
-    public static void countDuplicateCharacter(String str) {
+    public static void countDuplicateCharacter1(String str) {
         HashMap<Character, Integer> map = new HashMap<>();
         for (Character c : str.toCharArray()) {
             if (map.containsKey(c)) map.put(c, map.get(c) + 1);
