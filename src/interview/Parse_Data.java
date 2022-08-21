@@ -9,6 +9,7 @@ public class Parse_Data {
         String data = "{104}LA{101}Paris";
         System.out.println(parseData(data));
 
+
         String str1 = "I am an QA automation Tester";
         LinkedHashMap<String, Integer> map1 = new LinkedHashMap<>();
         for (String s : str1.split(" ")){
