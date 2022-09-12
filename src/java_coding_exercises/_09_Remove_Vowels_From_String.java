@@ -2,7 +2,7 @@ package java_coding_exercises;
 
 public class _09_Remove_Vowels_From_String {
     public static void main(String[] args) {
-        System.out.println(removeVowels("  mElda"));
+        System.out.println(removeVowels1("  mElda"));
     }
 
     public static String removeVowels(String str) {
@@ -18,4 +18,8 @@ public class _09_Remove_Vowels_From_String {
 
         return sb.toString().trim();
     }
+    public static String removeVowels1(String str) {
+        return str.replaceAll("[AEUOIaeoiu]","").trim();
+    }
+
 }
