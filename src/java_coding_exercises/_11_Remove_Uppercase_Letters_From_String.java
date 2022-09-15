@@ -22,8 +22,8 @@ public class _11_Remove_Uppercase_Letters_From_String {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            //lower case ASCII value 90 and 122
-            if (c >= 90 && c <= 122) sb.append(c);
+            //lower case ASCII value 97 and 122
+            if (c >= 97 && c <= 122) sb.append(c);
         }
         return sb.toString().trim();
     }
