@@ -3,6 +3,13 @@ package java_coding_exercises;
 public class _11_Remove_Uppercase_Letters_From_String {
     public static void main(String[] args) {
         System.out.println(removeUpperCase3("  MeldaSav "));
+        String str = "Melda1234";
+        String str1 = str.replaceAll("[A-Za-z]", "");
+        int sum = 0;
+        for (int i = 0; i < str1.length(); i++) {
+            sum += Integer.parseInt(str1.charAt(i) + "");
+        }
+        System.out.println(sum);
     }
 
     public static String removeUpperCase(String str) {
@@ -36,4 +43,6 @@ public class _11_Remove_Uppercase_Letters_From_String {
         }
         return sb.toString().trim();
     }
+
+
 }
