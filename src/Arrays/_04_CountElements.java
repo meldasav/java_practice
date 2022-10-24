@@ -16,5 +16,7 @@ public class _04_CountElements {
         System.out.println(countNegative);
         System.out.println(countPositive);
         System.out.println(countZero);
+
+
     }
 }
