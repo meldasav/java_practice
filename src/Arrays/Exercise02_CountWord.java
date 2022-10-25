@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class Exercise02_CountWord {
     public static void main(String[] args) {
         String sentence = "I love arrays";
@@ -19,6 +21,10 @@ public class Exercise02_CountWord {
             if (c == ' ') countWord++;
         }
         System.out.println(countWord + 1);
+
+        String s="Today is Sunday and the weather is nice";
+        String[] arr1=s.split(" ");
+        System.out.println(Arrays.toString(s.split("is")));
     }
 }
 
