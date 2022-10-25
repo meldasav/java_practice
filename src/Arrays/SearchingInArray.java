@@ -25,7 +25,19 @@ public class SearchingInArray {
         }
         System.out.println(has5);
         Arrays.sort(numbers);
-        System.out.println(Arrays.binarySearch(numbers, 7) > 0);
-        System.out.println(Arrays.binarySearch(numbers, 5) > 0);
+        System.out.println(Arrays.binarySearch(numbers, 7) >=0);
+        System.out.println(Arrays.binarySearch(numbers, 5) >=0);
+
+        String[] objects = {"Remote", "Mouse", "Mouse", "Keyboard", "ipad"};
+        boolean hasMouse = false;
+        for (String object : objects) {
+            if (object.equals("Mouse")) {
+                hasMouse = true;
+                break;
+            }
+        }
+        System.out.println(hasMouse);
+        Arrays.sort(objects);
+        System.out.println(Arrays.binarySearch(objects,"Mouse")>=0);
     }
 }
