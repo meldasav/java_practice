@@ -8,8 +8,11 @@ public class _06_CountHowManyA {
 
         int count = 0;
         while (count < 4) {
+
             System.out.println("Please enter a sentence");
             String sentence = scan.nextLine();
+
+
             if (!sentence.isEmpty()) {
                 if (sentence.toLowerCase().contains("a")) {
                     int countA = 0;
