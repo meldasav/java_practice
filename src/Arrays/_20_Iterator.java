@@ -15,5 +15,15 @@ public class _20_Iterator {
             if (f.length() == 5) iterator.remove();
         }
         System.out.println(food);
+
+        ArrayList<String> objects = new ArrayList<>(Arrays.asList("Pen", "Pencil", "Book", "Notebook", "MacBook Pro"));
+        //    objects.removeIf(o->o.toLowerCase().contains("book"));
+        //    System.out.println(objects);
+        Iterator<String> iterator1 = objects.iterator();
+        while (iterator1.hasNext()) {
+            String o = iterator1.next();
+            if (o.toLowerCase().contains("book")) iterator1.remove();
+        }
+        System.out.println(objects);
     }
 }
