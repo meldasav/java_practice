@@ -5,8 +5,10 @@ import java.util.LinkedList;
 
 public class _18_RemoveElementFromLinkList {
     public static void main(String[] args) {
-        LinkedList<String> languages = new LinkedList<>(Arrays.asList("Java", "#C", "Java Script", "Python","java"));
-        languages.removeIf(x->Character.isUpperCase(x.charAt(0)) || !Character.isLetter(x.charAt(0)));
+        LinkedList<String> languages = new LinkedList<>(Arrays.asList("Java", "#C", "Java Script", "Python", "java", "can"));
+        languages.removeIf(x -> !x.toLowerCase().startsWith("c"));
+        System.out.println(languages.size());//count how many element start with c
+        languages.removeIf(x -> Character.isUpperCase(x.charAt(0)) || !Character.isLetter(x.charAt(0)));
         System.out.println(languages);
         languages.removeIf(x -> x.length() > 5);
         System.out.println(languages);
