@@ -17,8 +17,8 @@ public class _20_Iterator {
         System.out.println(food);
 
         ArrayList<String> objects = new ArrayList<>(Arrays.asList("Pen", "Pencil", "Book", "Notebook", "MacBook Pro"));
-        //    objects.removeIf(o->o.toLowerCase().contains("book"));
-        //    System.out.println(objects);
+           objects.removeIf(o->o.toLowerCase().contains("book"));
+           System.out.println(objects);
         Iterator<String> iterator1 = objects.iterator();
         while (iterator1.hasNext()) {
             String o = iterator1.next();
