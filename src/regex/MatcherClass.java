@@ -48,5 +48,14 @@ public class MatcherClass {
             countWords++;
         }
         System.out.println("This sentence has " + countWords + " words");
+
+        System.out.println(Pattern.matches("[xyz]","xyz"));//false
+        System.out.println(Pattern.matches("[a-z&&[^pqrs]]","n"));//true
+        System.out.println(Pattern.matches("[^xyz]","y"));//false
+        System.out.println(Pattern.matches("[A-Za-z]+","I go to school at TG"));//false
+
+        Pattern pattern3=Pattern.compile("[A-Za-z0-9_-]{9,15}");
+        System.out.println(Pattern.matches(pattern3.toString(),"MeldaSav_12"));
+
     }
 }
