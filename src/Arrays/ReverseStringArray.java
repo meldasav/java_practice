@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class ReverseStringArray {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(reverseArray1(new String[]{"A","B","C"})));
+        System.out.println(Arrays.toString(reverseArray2(new String[]{"A","B","C"})));
     }
     public static String[] reverseArray(String[] array){
 
@@ -22,5 +22,23 @@ public class ReverseStringArray {
         Collections.reverse(Arrays.asList(array));
         return array;
     }
+
+    // Third way
+
+    public static String[] reverseArray2(String[] array){
+        int firstIndex=0;
+        int lastIndex= array.length-1;
+        String container;
+
+        while(firstIndex<lastIndex){
+            container=array[firstIndex];
+            array[firstIndex]=array[lastIndex];
+            array[lastIndex]=container;
+            firstIndex++;
+            lastIndex--;
+        }
+        return array;
+    }
+
 
 }
