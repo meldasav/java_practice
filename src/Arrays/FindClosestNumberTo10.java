@@ -7,7 +7,7 @@ public class FindClosestNumberTo10 {
     public static void main(String[] args) {
         System.out.println(closestTo10(new int[]{10, 11, 12, 14, 7, 5}));
     }
-    
+
     public static int closestTo10(int[] array) {
 
         Arrays.sort(array);
