@@ -25,5 +25,17 @@ public class try_catch_01 {
         } finally {
             System.out.println("End of program");
         }
+
+        int[] array = {1, 2, 3, 4};
+
+        try {
+            int result = array[6] * 5;
+            System.out.println(result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            System.out.println("End of program");
+        }
     }
 }
